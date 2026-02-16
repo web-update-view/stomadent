@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Запрет индексации для тестового концепта -->
     <meta name="robots" content="noindex, nofollow">
     <title>Стомадент — Концепт Редизайна</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -30,7 +31,6 @@
             background: linear-gradient(90deg, rgba(30, 58, 138, 0.9) 0%, rgba(30, 58, 138, 0.4) 100%);
         }
 
-        /* Анимация для плашки */
         @keyframes slideDown {
             from { transform: translateY(-100%); }
             to { transform: translateY(0); }
@@ -42,7 +42,7 @@
 </head>
 <body class="bg-slate-50 text-slate-900">
 
-    <!-- Плашка с дисклеймером -->
+    <!-- Информационная плашка -->
     <div class="bg-amber-50 border-b border-amber-100 py-2 px-4 sticky top-0 z-[100] animate-slide-down">
         <div class="container mx-auto flex items-center justify-center gap-2 text-amber-800 text-xs md:text-sm font-medium">
             <i class="fas fa-info-circle text-amber-500"></i>
@@ -52,18 +52,18 @@
         </div>
     </div>
 
-    <!-- Навигация -->
+    <!-- Шапка сайта -->
     <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 top-10 md:top-9 py-4 bg-transparent">
         <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
             <div class="flex items-center gap-2">
                 <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">С</div>
                 <div class="flex flex-col">
-                    <span id="logo-text" class="font-bold text-xl leading-none text-blue-900 md:text-white">Стомадент</span>
-                    <span id="logo-sub" class="text-[10px] uppercase tracking-widest text-slate-500 md:text-blue-100">Стоматология</span>
+                    <span id="logo-text" class="font-bold text-xl leading-none text-blue-900 md:text-white transition-colors">Стомадент</span>
+                    <span id="logo-sub" class="text-[10px] uppercase tracking-widest text-slate-500 md:text-blue-100 transition-colors">Стоматология</span>
                 </div>
             </div>
 
-            <!-- Десктопное меню -->
+            <!-- Основное меню -->
             <div class="hidden lg:flex items-center gap-8">
                 <div class="flex gap-6">
                     <a href="#about" class="nav-link font-medium text-slate-700 md:text-white hover:text-blue-400 transition-colors">О клинике</a>
@@ -71,23 +71,23 @@
                     <a href="#doctors" class="nav-link font-medium text-slate-700 md:text-white hover:text-blue-400 transition-colors">Врачи</a>
                     <a href="#contacts" class="nav-link font-medium text-slate-700 md:text-white hover:text-blue-400 transition-colors">Контакты</a>
                 </div>
-                <div class="flex items-center gap-2 font-bold text-blue-600 md:text-white" id="phone-nav">
+                <div class="flex items-center gap-2 font-bold text-blue-600 md:text-white transition-colors" id="phone-nav">
                     <i class="fas fa-phone-alt"></i>
                     <span>+7 (499) 730-03-33</span>
                 </div>
-                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-blue-200">
                     Записаться
                 </button>
             </div>
 
-            <!-- Мобильная кнопка -->
-            <button class="lg:hidden text-blue-900 md:text-white" id="menu-toggle">
+            <!-- Кнопка мобильного меню -->
+            <button class="lg:hidden text-blue-900 md:text-white transition-colors" id="menu-toggle">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
     </nav>
 
-    <!-- Мобильное меню -->
+    <!-- Мобильное меню (скрытое) -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-[110] hidden flex-col p-6 overflow-y-auto">
         <div class="flex justify-between items-center mb-10">
             <div class="font-bold text-2xl text-blue-600">Стомадент</div>
@@ -109,14 +109,14 @@
         </div>
     </div>
 
-    <!-- Главный экран (Hero) -->
+    <!-- Главный экран -->
     <section class="relative h-[90vh] min-h-[650px] flex items-center overflow-hidden bg-slate-900 pt-10">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 hero-gradient z-10"></div>
-            <!-- Заменено на hero-bg.jpg -->
+            <!-- Использование загруженного изображения hero-bg.jpg -->
             <img 
                 src="hero-bg.jpg" 
-                alt="Современный кабинет клиники Стомадент" 
+                alt="[Интерьер клиники]" 
                 class="w-full h-full object-cover opacity-60"
                 onerror="this.src='https://via.placeholder.com/1920x1080/1e3a8a/ffffff?text=Интерьер+Стомадент'"
             />
@@ -146,7 +146,7 @@
         </div>
     </section>
 
-    <!-- Инфо-панель со статистикой -->
+    <!-- Цифры и факты -->
     <div class="container mx-auto px-4 -mt-16 relative z-30">
         <div class="bg-white rounded-2xl shadow-2xl grid grid-cols-2 md:grid-cols-4 p-8 gap-8 border border-slate-100">
             <div class="text-center">
@@ -168,28 +168,29 @@
         </div>
     </div>
 
-    <!-- Услуги -->
-    <section id="services" class="py-24 bg-slate-50 overflow-hidden">
+    <!-- Раздел Услуги -->
+    <section id="services" class="py-24 bg-slate-50">
         <div class="container mx-auto px-4 md:px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
                 <div class="max-w-xl">
-                    <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Что мы умеем</h2>
+                    <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Наши направления</h2>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 leading-tight">
-                        Широкий спектр услуг для <br class="hidden md:block" /> здоровья всей семьи
+                        Комплексный подход к вашему <br class="hidden md:block" /> стоматологическому здоровью
                     </h3>
                 </div>
-                <a href="#" class="text-blue-600 font-bold flex items-center gap-2 group transition-all">
-                    Все услуги клиники <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
+                <a href="#" class="text-blue-600 font-bold flex items-center gap-2 group">
+                    Смотреть все услуги <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
                 </a>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Карточка услуги -->
                 <div class="service-card group bg-white p-8 rounded-2xl shadow-sm border border-slate-100 transition-all duration-300">
                     <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                         <i class="fas fa-stethoscope text-2xl"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-slate-900">Терапия</h4>
-                    <p class="text-slate-600 leading-relaxed mb-6">Лечение кариеса, пульпита и эстетическая реставрация зубов.</p>
+                    <p class="text-slate-600 leading-relaxed mb-6">Бережное лечение кариеса и эстетическая реставрация зубов современными материалами.</p>
                     <button class="text-slate-400 font-bold group-hover:text-blue-600 flex items-center gap-1 transition-colors">
                         Подробнее <i class="fas fa-chevron-right text-xs"></i>
                     </button>
@@ -199,7 +200,7 @@
                         <i class="fas fa-tooth text-2xl"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-slate-900">Имплантация</h4>
-                    <p class="text-slate-600 leading-relaxed mb-6">Восстановление зубов современными системами премиум-класса.</p>
+                    <p class="text-slate-600 leading-relaxed mb-6">Восстановление жевательной функции и эстетики с помощью премиальных систем.</p>
                     <button class="text-slate-400 font-bold group-hover:text-blue-600 flex items-center gap-1 transition-colors">
                         Подробнее <i class="fas fa-chevron-right text-xs"></i>
                     </button>
@@ -209,7 +210,7 @@
                         <i class="fas fa-smile text-2xl"></i>
                     </div>
                     <h4 class="text-xl font-bold mb-3 text-slate-900">Ортодонтия</h4>
-                    <p class="text-slate-600 leading-relaxed mb-6">Исправление прикуса брекетами и элайнерами для любого возраста.</p>
+                    <p class="text-slate-600 leading-relaxed mb-6">Создание идеальной улыбки с помощью брекетов и невидимых элайнеров.</p>
                     <button class="text-slate-400 font-bold group-hover:text-blue-600 flex items-center gap-1 transition-colors">
                         Подробнее <i class="fas fa-chevron-right text-xs"></i>
                     </button>
@@ -218,16 +219,16 @@
         </div>
     </section>
 
-    <!-- О клинике -->
+    <!-- Раздел О клинике -->
     <section id="about" class="py-24 bg-white">
         <div class="container mx-auto px-4 md:px-6">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
                     <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
-                        <!-- Заменено на Screenshot_1.jpg -->
+                        <!-- Использование загруженного изображения Screenshot_1.jpg -->
                         <img 
                             src="Screenshot_1.jpg" 
-                            alt="Команда врачей Стомадент" 
+                            alt="[Команда врачей]" 
                             class="w-full h-auto"
                             onerror="this.src='https://via.placeholder.com/800x600/f1f5f9/1e3a8a?text=Наша+Команда'"
                         />
@@ -248,60 +249,37 @@
                 </div>
 
                 <div>
-                    <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">О клинике</h2>
+                    <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Почему мы?</h2>
                     <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 leading-tight">
-                        Стомадент — это лечение без боли и страха
+                        Стомадент — это экспертная помощь в центре Ростова-на-Дону
                     </h3>
                     <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-                        Мы собрали коллектив лучших врачей-стоматологов Ростова-на-Дону. Наша миссия — возвращать людям уверенность и радость улыбки, используя мировые стандарты медицины.
+                        Мы объединили передовое оборудование и многолетний опыт врачей, чтобы каждое посещение стоматолога было для вас комфортным и результативным.
                     </p>
                     
                     <div class="grid sm:grid-cols-2 gap-4 mb-10">
                         <div class="flex items-center gap-3">
                             <i class="fas fa-check-circle text-blue-600"></i>
-                            <span class="font-medium text-slate-700">Своя лаборатория</span>
+                            <span class="font-medium text-slate-700">Собственный рентген-кабинет</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <i class="fas fa-check-circle text-blue-600"></i>
-                            <span class="font-medium text-slate-700">Гарантия 5 лет</span>
+                            <span class="font-medium text-slate-700">Гарантия на работы до 5 лет</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <i class="fas fa-check-circle text-blue-600"></i>
-                            <span class="font-medium text-slate-700">Микроскоп</span>
+                            <span class="font-medium text-slate-700">Лечение под микроскопом</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <i class="fas fa-check-circle text-blue-600"></i>
-                            <span class="font-medium text-slate-700">Рассрочка 0%</span>
+                            <span class="font-medium text-slate-700">Рассрочка на лечение</span>
                         </div>
                     </div>
                     
                     <button class="bg-slate-900 hover:bg-slate-800 text-white px-10 py-4 rounded-xl font-bold transition-all shadow-lg">
-                        Познакомиться с врачами
+                        Узнать больше о клинике
                     </button>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Призыв к действию -->
-    <section class="py-20 bg-blue-600 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <i class="fas fa-tooth text-[20rem] absolute -top-20 -right-20 transform rotate-12"></i>
-        </div>
-        <div class="container mx-auto px-4 text-center relative z-10">
-            <h2 class="text-3xl md:text-5xl font-extrabold text-white mb-6">
-                Первичный осмотр — 0 ₽
-            </h2>
-            <p class="text-blue-100 text-xl mb-10 max-w-2xl mx-auto opacity-90">
-                Запишитесь на консультацию сегодня и получите подробный план лечения от ведущего специалиста бесплатно.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <button class="bg-white text-blue-600 px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-50 transition-all shadow-xl">
-                    Записаться онлайн
-                </button>
-                <button class="bg-blue-800 text-white border border-blue-400 px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-900 transition-all">
-                    +7 (499) 730-03-33
-                </button>
             </div>
         </div>
     </section>
@@ -319,7 +297,7 @@
                         </div>
                     </div>
                     <p class="text-slate-400 leading-relaxed mb-6">
-                        Современная помощь для всей семьи. Мы работаем, чтобы вы улыбались чаще!
+                        Ваша улыбка — наша главная цель. Оказываем все виды стоматологической помощи профессионально и с заботой.
                     </p>
                     <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-blue-600 transition-colors">
@@ -332,34 +310,34 @@
                 </div>
 
                 <div>
-                    <h5 class="text-lg font-bold mb-6">Контакты</h5>
+                    <h5 class="text-lg font-bold mb-6">Наши контакты</h5>
                     <ul class="space-y-4 text-slate-400">
                         <li class="flex gap-3">
                             <i class="fas fa-map-marker-alt text-blue-500 mt-1"></i>
                             <span>г. Ростов-на-Дону, <br>ул. Профсоюзная, 10</span>
                         </li>
                         <li class="flex gap-3">
-                            <i class="fas fa-clock text-blue-500 mt-1"></i>
-                            <span>Ежедневно: <br>09:00 — 21:00</span>
+                            <i class="fas fa-phone-alt text-blue-500 mt-1"></i>
+                            <span>+7 (863) 288-80-07</span>
                         </li>
                     </ul>
                 </div>
 
                 <div>
-                    <h5 class="text-lg font-bold mb-6">Разделы</h5>
+                    <h5 class="text-lg font-bold mb-6">Полезные ссылки</h5>
                     <ul class="space-y-4 text-slate-400">
-                        <li><a href="#" class="hover:text-white transition-colors">Цены на услуги</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Наши врачи</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Акции</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Отзывы</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Прайс-лист</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Лицензии</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Акции месяца</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Блог о здоровье зубов</a></li>
                     </ul>
                 </div>
 
                 <div>
-                    <h5 class="text-lg font-bold mb-6">Обратный звонок</h5>
-                    <p class="text-slate-400 mb-4 text-sm">Оставьте свой номер телефона.</p>
+                    <h5 class="text-lg font-bold mb-6">Записаться на прием</h5>
+                    <p class="text-slate-400 mb-4 text-sm">Оставьте свой телефон, мы перезвоним вам для уточнения деталей.</p>
                     <form class="flex">
-                        <input type="tel" placeholder="+7" class="bg-slate-800 border-none rounded-l-xl px-4 py-3 w-full focus:ring-1 focus:ring-blue-500 outline-none text-white" />
+                        <input type="tel" placeholder="+7" class="bg-slate-800 border-none rounded-l-xl px-4 py-3 w-full focus:ring-1 focus:ring-blue-500 outline-none text-white transition-all" />
                         <button class="bg-blue-600 px-4 py-3 rounded-r-xl hover:bg-blue-700 transition-colors">
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -368,23 +346,23 @@
             </div>
             
             <div class="pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4 text-slate-500 text-sm text-center md:text-left">
-                <p>© 2025 Клиника «Стомадент». Все права защищены.</p>
+                <p>© 2026  Стоматологическая клиника «Стомадент». Все права защищены.</p>
                 <div class="flex gap-6">
-                    <a href="#" class="hover:text-white">Политика конфиденциальности</a>
+                    <a href="#" class="hover:text-white transition-colors">Политика конфиденциальности</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Скрипт для изменения навбара при скролле
+        // Логика изменения стилей навигации при прокрутке
         window.onscroll = function() {
             const navbar = document.getElementById('navbar');
             const logoText = document.getElementById('logo-text');
             const logoSub = document.getElementById('logo-sub');
             const phoneNav = document.getElementById('phone-nav');
             const navLinks = document.querySelectorAll('.nav-link');
-            const menuBtn = document.querySelector('#menu-toggle i');
+            const menuBtnIcon = document.querySelector('#menu-toggle i');
 
             if (window.pageYOffset > 50) {
                 navbar.classList.add('glass-nav', 'top-0', 'py-2');
@@ -395,8 +373,8 @@
                 logoSub.classList.add('text-slate-500');
                 phoneNav.classList.remove('md:text-white');
                 phoneNav.classList.add('text-blue-600');
-                menuBtn.classList.remove('md:text-white');
-                menuBtn.classList.add('text-blue-900');
+                menuBtnIcon.classList.remove('md:text-white');
+                menuBtnIcon.classList.add('text-blue-900');
                 navLinks.forEach(l => {
                     l.classList.remove('md:text-white');
                     l.classList.add('text-slate-700');
@@ -408,8 +386,8 @@
                 logoSub.classList.add('md:text-blue-100');
                 phoneNav.classList.add('md:text-white');
                 phoneNav.classList.remove('text-blue-600');
-                menuBtn.classList.add('md:text-white');
-                menuBtn.classList.remove('text-blue-900');
+                menuBtnIcon.classList.add('md:text-white');
+                menuBtnIcon.classList.remove('text-blue-900');
                 navLinks.forEach(l => {
                     l.classList.add('md:text-white');
                     l.classList.remove('text-slate-700');
@@ -417,7 +395,7 @@
             }
         };
 
-        // Мобильное меню
+        // Логика мобильного меню
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
